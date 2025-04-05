@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Nocturne Verse</title>
+  <link rel="icon" href="favicon.ico" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #0b0b1a;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      max-width: 500px;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    button {
+      background-color: #a792ff;
+      color: #0b0b1a;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 0.5rem;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #c0b3ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Member Login</h1>
+  <p>Access to quarterly publications and exclusive content is restricted to members only. Please log in or sign up below to continue.</p>
+
+  <button onclick="netlifyIdentity.open('login')">Log In</button>
+  <button onclick="netlifyIdentity.open('signup')">Sign Up</button>
+
+  <script>
+    netlifyIdentity.on("login", user => {
+      window.location.href = "/members/index.html";
+    });
+    netlifyIdentity.on("signup", user => {
+      window.location.href = "/members/index.html";
+    });
+  </script>
+</body>
+</html>
