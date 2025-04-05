@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nocturne Verse</title>
+  <link rel="icon" type="image/x-icon" href="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/favicon.ico" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #0b0b1a;
+      color: #f0f0f0;
+      position: relative;
+    }
+
+    nav {
+      background-color: rgba(15, 15, 25, 0.9);
+      padding: 0.75rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: #ccc;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 5px #aaa;
+    }
+
+    .corner-decor {
+      position: fixed;
+      width: 100px;
+      height: 100px;
+      z-index: 100;
+      pointer-events: none;
+    }
+
+    .top-left { top: 0; left: 0; }
+    .top-right { top: 0; right: 0; }
+    .bottom-left { bottom: 0; left: 0; }
+    .bottom-right { bottom: 0; right: 0; }
+
+    header {
+      background-image: url('file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/hero_background.png');
+      background-size: cover;
+      background-position: center;
+      padding: 4rem 2rem 2rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      letter-spacing: 3px;
+    }
+
+    .divider {
+      width: 100%;
+      margin: 2rem 0 1rem 0;
+      text-align: center;
+    }
+
+    .divider img {
+      max-width: 300px;
+    }
+
+    main {
+      padding: 1rem 2rem 2rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .featured-banner {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #a792ff;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .poem-card {
+      background-image: url('file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/poem_card_texture.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      position: relative;
+      z-index: 1;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .poem-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(170, 146, 255, 0.4);
+    }
+
+    .poem-card .author {
+      margin-top: 1rem;
+      font-style: italic;
+      color: #bbb;
+    }
+
+    .poem-card a {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+    }
+
+    footer {
+      background-image: url('file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/footer_background.png');
+      background-size: cover;
+      background-position: center;
+      color: #ccc;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .social-icons {
+      margin-top: 1rem;
+    }
+
+    .social-icons img {
+      width: 32px;
+      margin: 0 0.5rem;
+      filter: grayscale(100%) brightness(0.9);
+    }
+  </style>
+</head>
+<body>
+  <!-- Decorative Corners -->
+  <img src="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/corner_flourish_TL.png" class="corner-decor top-left" alt="Top Left Flourish" />
+  <img src="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/corner_flourish_TR.png" class="corner-decor top-right" alt="Top Right Flourish" />
+  <img src="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/corner_flourish_BL.png" class="corner-decor bottom-left" alt="Bottom Left Flourish" />
+  <img src="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/corner_flourish_BR.png" class="corner-decor bottom-right" alt="Bottom Right Flourish" />
+
+  <header>
+    <h1>Nocturne Verse</h1>
+  </header>
+
+  <nav>
+    <a href="Index.html">Home</a>
+    <a href="poems.html">Poems</a>
+    <a href="authors.html">Authors</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="divider">
+  <p style="font-style: italic; font-size: 1.1rem; color: #ccc; margin-bottom: 0.5rem;">
+    Your source for dark, lyrical, and myth-woven poetry
+  </p>
+  <img src="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/section_divider.png" alt="Section Divider" />
+  <p style="font-style: italic; font-size: 0.95rem; color: #999; margin-top: 0.5rem;">
+    “I became insane, with long intervals of horrible sanity.” - <i>Edgar Allan Poe</i>
+  </p>
+</div>
+
+  <main>
+    <div class="featured-banner">Featured: March 2025</div>
+
+    <div class="poem-card">
+      <a href="veil-of-night.html">
+        <h2>In the Veil of Night</h2>
+        <p>Whispers thread the trees’ embrace,<br />
+        Beneath the stars, a ghostly trace.<br />
+        The moon weeps silver on the stone,<br />
+        Where dreams and dust remain alone.</p>
+        <div class="author">by A. Everhart</div>
+      </a>
+    </div>
+
+    <div class="poem-card">
+      <a href="ravens-lament.html">
+        <h2>The Raven’s Lament</h2>
+        <p>Crimson echoes, cold winds cry,<br />
+        Through chapel ruins, shadows fly.<br />
+        A velvet hush, a fleeting glance,<br />
+        The night begins its mournful dance.</p>
+        <div class="author">by L. Virelle</div>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Nocturne Verse. All rights reserved.
+    <div class="social-icons">
+      <a href="https://www.facebook.com" target="_blank">
+        <img src="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/facebook_icon.png" alt="Facebook" />
+      </a>
+      <a href="https://www.linkedin.com" target="_blank">
+        <img src="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/linkedin_icon.png" alt="LinkedIn" />
+      </a>
+      <a href="mailto:youremail@example.com">
+        <img src="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/email_icon.png" alt="Email" />
+      </a>
+      <a href="https://www.twitter.com" target="_blank">
+        <img src="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/x_icon.png" alt="X (Twitter)" />
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

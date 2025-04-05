@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Featured Authors | Nocturne Verse</title>
+  <link rel="icon" type="image/x-icon" href="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/favicon.ico" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #0b0b1a;
+      color: #f0f0f0;
+    }
+
+    header {
+      background-image: url('file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/hero_background.png');
+      background-size: cover;
+      background-position: center;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      background-color: rgba(15, 15, 25, 0.9);
+      padding: 0.75rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: #ccc;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 5px #aaa;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .left-column {
+      flex: 1;
+    }
+
+    .right-column {
+      flex: 1;
+      background-color: rgba(25, 25, 40, 0.9);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      display: none;
+    }
+
+    .submit-call {
+      background-color: rgba(20, 20, 35, 0.85);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-left: 4px solid #a792ff;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .submit-call a {
+      color: #a792ff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .submit-call a:hover {
+      text-decoration: underline;
+    }
+
+    .month-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .month-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #a792ff;
+      border-bottom: 1px solid #444;
+      padding-bottom: 0.5rem;
+    }
+
+    .author-card {
+      background-color: rgba(30, 30, 45, 0.9);
+      padding: 1rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .author-name a {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .author-name a:hover {
+      color: #a792ff;
+      text-shadow: 0 0 5px #a792ff;
+    }
+
+    .author-bio {
+      font-style: italic;
+      color: #ccc;
+      margin-top: 0.25rem;
+    }
+
+    footer {
+      background-image: url('file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/footer_background.png');
+      background-size: cover;
+      background-position: center;
+      color: #ccc;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .social-icons {
+      margin-top: 1rem;
+    }
+
+    .social-icons img {
+      width: 32px;
+      margin: 0 0.5rem;
+      filter: grayscale(100%) brightness(0.9);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Featured Authors</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="poems.html">Poems</a>
+    <a href="authors.html">Authors</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <div class="left-column">
+      <div class="submit-call">
+        <p>Would you like to be a featured author?</p>
+        <p><a href="https://submittable.com/yourpage" target="_blank">Visit our Submittable page</a> to view our submission requirements.</p>
+      </div>
+
+      <div class="month-section">
+        <div class="month-title">April 2025</div>
+        <div class="author-card">
+          <div class="author-name">
+            <a onclick="showAuthor('elias')">Elias Thorn</a>
+          </div>
+          <div class="author-bio">Elias writes lyrical elegies inspired by misty Appalachian mornings.</div>
+        </div>
+        <div class="author-card">
+          <div class="author-name">
+            <a onclick="showAuthor('juniper')">Juniper M. Ash</a>
+          </div>
+          <div class="author-bio">Juniper weaves dreams into poetic verses rooted in myth and memory.</div>
+        </div>
+      </div>
+
+      <div class="month-section">
+        <div class="month-title">March 2025</div>
+        <div class="author-card">
+          <div class="author-name">
+            <a onclick="showAuthor('everhart')">A. Everhart</a>
+          </div>
+          <div class="author-bio">Known for atmospheric themes and haunting rhythm, Everhart explores the night.</div>
+        </div>
+        <div class="author-card">
+          <div class="author-name">
+            <a onclick="showAuthor('virelle')">L. Virelle</a>
+          </div>
+          <div class="author-bio">L. Virelle blends romantic decay with gothic realism in her moody verse.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-column" id="authorProfile">
+      <!-- Profile content will be injected here -->
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Nocturne Verse. All rights reserved.
+    <div class="social-icons">
+      <a href="https://www.facebook.com" target="_blank">
+        <img src="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/facebook_icon.png" alt="Facebook" />
+      </a>
+      <a href="https://www.linkedin.com" target="_blank">
+        <img src="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/linkedin_icon.png" alt="LinkedIn" />
+      </a>
+      <a href="mailto:youremail@example.com">
+        <img src="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/email_icon.png" alt="Email" />
+      </a>
+      <a href="https://www.twitter.com" target="_blank">
+        <img src="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/x_icon.png" alt="X (Twitter)" />
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const profiles = {
+      elias: `
+        <h2>Elias Thorn</h2>
+        <p><em>"Poetry is the fog of the soul lifting just long enough to see the shape of your longing."</em></p>
+        <p>
+          Elias Thorn is a contemporary elegist with roots in the mist-shrouded foothills of Appalachia.
+          His work reflects the quiet tension between memory and decay, often exploring nature as a vessel for sorrow and spiritual reclamation.
+        </p>
+        <p>
+          <strong>Featured Poems:</strong><br>
+          <a href="mist-on-wren-hollow.html">Mist on Wren Hollow</a><br>
+          <a href="gravel-saints.html">Gravel Saints</a>
+        </p>
+      `,
+      juniper: `
+        <h2>Juniper M. Ash</h2>
+        <p><em>"I write to remember the things the world has forgotten."</em></p>
+        <p>
+          Juniper crafts immersive poetry shaped by folklore, dreamscapes, and ancestral echoes.
+          Her works often explore mythic transformation, time-bending imagery, and soft apocalypse.
+        </p>
+        <p><strong>Featured Poem:</strong><br>
+        <a href="mythbone.html">Mythbone</a></p>
+      `,
+      everhart: `
+        <h2>A. Everhart</h2>
+        <p><em>"The night has a language, and I am still learning to speak it."</em></p>
+        <p>Known for atmospheric themes and haunting rhythm, Everhart’s poems capture the silence between stars.</p>
+        <p><strong>Featured Poem:</strong><br>
+        <a href="in-the-veil-of-night.html">In the Veil of Night</a></p>
+      `,
+      virelle: `
+        <h2>L. Virelle</h2>
+        <p><em>"Decay is divine, if you write it right."</em></p>
+        <p>
+          Gothic in tone and deeply romantic in structure, Virelle’s verse is a slow-burning candle in a cathedral ruin.
+        </p>
+        <p><strong>Featured Poem:</strong><br>
+        <a href="the-ravens-lament.html">The Raven’s Lament</a></p>
+      `
+    };
+
+    function showAuthor(key) {
+      const profileBox = document.getElementById('authorProfile');
+      profileBox.innerHTML = profiles[key];
+      profileBox.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

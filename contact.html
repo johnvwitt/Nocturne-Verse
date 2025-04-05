@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Nocturne Verse</title>
+  <link rel="icon" type="image/x-icon" href="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/favicon.ico" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #0b0b1a;
+      color: #f0f0f0;
+    }
+
+    header {
+      background-image: url('file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/hero_background.png');
+      background-size: cover;
+      background-position: center;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      background-color: rgba(15, 15, 25, 0.9);
+      padding: 0.75rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: #ccc;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 5px #aaa;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: rgba(20, 20, 35, 0.8);
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      padding: 0.75rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      padding: 0.75rem;
+      background-color: #a792ff;
+      color: #0b0b1a;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #c0b3ff;
+    }
+
+    .confirmation {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background-color: #1a1a2a;
+      border: 1px solid #4caf50;
+      color: #b0ffb0;
+      border-radius: 5px;
+      display: none;
+    }
+
+    footer {
+      background-image: url('file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/footer_background.png');
+      background-size: cover;
+      background-position: center;
+      color: #ccc;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .social-icons {
+      margin-top: 1rem;
+    }
+
+    .social-icons img {
+      width: 32px;
+      margin: 0 0.5rem;
+      filter: grayscale(100%) brightness(0.9);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="poems.html">Poems</a>
+    <a href="authors.html">Authors</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <form id="contact-form" action="https://formspree.io/f/mjkyaldv" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Send Message</button>
+
+      <div class="confirmation" id="confirmation">
+        Thank you for reaching out! We'll get back to you soon.
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    &copy; 2025 Nocturne Verse. All rights reserved.
+    <div class="social-icons">
+      <a href="https://www.facebook.com" target="_blank">
+        <img src="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/facebook_icon.png" alt="Facebook" />
+      </a>
+      <a href="https://www.linkedin.com" target="_blank">
+        <img src="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/linkedin_icon.png" alt="LinkedIn" />
+      </a>
+      <a href="mailto:youremail@example.com">
+        <img src="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/email_icon.png" alt="Email" />
+      </a>
+      <a href="https://www.twitter.com" target="_blank">
+        <img src="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/x_icon.png" alt="X (Twitter)" />
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const confirmation = document.getElementById('confirmation');
+
+    form.addEventListener('submit', async function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.reset();
+        confirmation.style.display = 'block';
+      } else {
+        alert('Oops! Something went wrong. Please try again later.');
+      }
+    });
+  </script>
+</body>
+</html>

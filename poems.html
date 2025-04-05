@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poems | Nocturne Verse</title>
+  <link rel="icon" type="image/x-icon" href="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/favicon.ico" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #0b0b1a;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-image: url('file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/hero_background.png');
+      background-size: cover;
+      background-position: center;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      background-color: rgba(15, 15, 25, 0.9);
+      padding: 0.75rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: #ccc;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 5px #aaa;
+    }
+
+    .content-wrapper {
+      display: flex;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 220px;
+      margin-right: 2rem;
+      position: sticky;
+      top: 2rem;
+      align-self: flex-start;
+      background-color: rgba(20, 20, 35, 0.9);
+      padding: 1rem;
+      border-radius: 8px;
+      height: fit-content;
+    }
+
+    .sidebar h2 {
+      font-size: 1.2rem;
+      color: #a792ff;
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar select {
+      width: 100%;
+      padding: 0.5rem;
+      background-color: #1e1e2d;
+      color: #f0f0f0;
+      border: 1px solid #555;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .scrollable-poems {
+      flex: 1;
+      max-height: 75vh;
+      overflow-y: auto;
+      padding-right: 1rem;
+    }
+
+    .author-block {
+      margin-bottom: 2.5rem;
+    }
+
+    .author-name {
+      font-size: 1.5rem;
+      color: #a792ff;
+      border-bottom: 1px solid #444;
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    ul.poem-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.poem-list li {
+      margin: 0.5rem 0;
+    }
+
+    ul.poem-list li a {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-style: italic;
+    }
+
+    ul.poem-list li a:hover {
+      color: #a792ff;
+      text-shadow: 0 0 5px #a792ff;
+    }
+
+    footer {
+      background-image: url('file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/footer_background.png');
+      background-size: cover;
+      background-position: center;
+      color: #ccc;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .social-icons {
+      margin-top: 1rem;
+    }
+
+    .social-icons img {
+      width: 32px;
+      margin: 0 0.5rem;
+      filter: grayscale(100%) brightness(0.9);
+    }
+
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        margin-bottom: 1.5rem;
+      }
+
+      .scrollable-poems {
+        max-height: none;
+        overflow-y: visible;
+        padding-right: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Poetry Gallery</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="poems.html">Poems</a>
+    <a href="authors.html">Authors</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="content-wrapper">
+    <aside class="sidebar">
+      <h2>Filter by Month</h2>
+      <select id="monthFilter">
+        <option value="all">All Months</option>
+        <option value="april">April 2025</option>
+        <option value="march">March 2025</option>
+        <option value="february">February 2025</option>
+        <option value="january">January 2025</option>
+      </select>
+    </aside>
+
+    <main class="scrollable-poems">
+      <div class="author-block" data-month="april">
+        <div class="author-name">Elias Thorn</div>
+        <ul class="poem-list">
+          <li><a href="mist-on-wren-hollow.html">Mist on Wren Hollow</a></li>
+          <li><a href="gravel-saints.html">Gravel Saints</a></li>
+        </ul>
+        <div class="author-name">Juniper M. Ash</div>
+        <ul class="poem-list">
+          <li><a href="mythbone.html">Mythbone</a></li>
+        </ul>
+      </div>
+
+      <div class="author-block" data-month="march">
+        <div class="author-name">A. Everhart</div>
+        <ul class="poem-list">
+          <li><a href="in-the-veil-of-night.html">In the Veil of Night</a></li>
+        </ul>
+        <div class="author-name">L. Virelle</div>
+        <ul class="poem-list">
+          <li><a href="the-ravens-lament.html">The Raven’s Lament</a></li>
+        </ul>
+      </div>
+
+      <div class="author-block" data-month="february">
+        <div class="author-name">Silas Wren</div>
+        <ul class="poem-list">
+          <li><a href="silence-below-the-grain-silo.html">Silence Below the Grain Silo</a></li>
+        </ul>
+        <div class="author-name">Nico Reyes</div>
+        <ul class="poem-list">
+          <li><a href="lightyears-in-reverse.html">Lightyears in Reverse</a></li>
+        </ul>
+      </div>
+
+      <div class="author-block" data-month="january">
+        <div class="author-name">Mae Kestrel</div>
+        <ul class="poem-list">
+          <li><a href="winterheart.html">Winterheart</a></li>
+        </ul>
+        <div class="author-name">T. Blackwell</div>
+        <ul class="poem-list">
+          <li><a href="threshold.html">Threshold</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    &copy; 2025 Nocturne Verse. All rights reserved.
+    <div class="social-icons">
+      <a href="https://www.facebook.com" target="_blank">
+        <img src="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/facebook_icon.png" alt="Facebook" />
+      </a>
+      <a href="https://www.linkedin.com" target="_blank">
+        <img src="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/linkedin_icon.png" alt="LinkedIn" />
+      </a>
+      <a href="mailto:youremail@example.com">
+        <img src="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/email_icon.png" alt="Email" />
+      </a>
+      <a href="https://www.twitter.com" target="_blank">
+        <img src="file:///C:/Users/johnv/OneDrive/Documents/demowebsite/Nocturne%20Verse/x_icon.png" alt="X (Twitter)" />
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const filter = document.getElementById("monthFilter");
+    const blocks = document.querySelectorAll(".author-block");
+
+    filter.addEventListener("change", function () {
+      const selected = this.value;
+      blocks.forEach(block => {
+        const month = block.getAttribute("data-month");
+        if (selected === "all" || selected === month) {
+          block.style.display = "block";
+        } else {
+          block.style.display = "none";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
