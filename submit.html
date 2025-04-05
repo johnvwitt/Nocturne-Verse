@@ -183,12 +183,17 @@
         <label for="upload">Upload Your Poems:</label>
         <input type="file" name="upload" id="upload" accept=".pdf,.doc,.docx,.txt" required />
 
+<label style="margin-top: 1.5rem;">
+  <input type="checkbox" name="acknowledge" required />
+  I acknowledge that I am submitting original, unpublished work, and I agree to the <a href="#rights" style="color: #a792ff; text-decoration: underline;">publication rights</a> outlined below.
+</label>
+        
         <button type="submit">Submit</button>
       </form>
 
       <div id="confirmation">Thank you! Your submission has been received.</div>
     </div>
-<div class="section">
+<div class="section" id="rights">
   <h2>Publication Rights</h2>
   <p>
     By submitting your work to Nocturne Verse, you affirm that the submitted content is your original, unpublished work.
