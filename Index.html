@@ -55,37 +55,23 @@
     }
 
     .title-container {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 1rem;
-  position: relative;
-  z-index: 2;
-}
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
 
-.inline-logo {
-  width: 100px;
-  height: auto;
-  margin-top: -40px; /* pulls it down into the nav bar */
-  z-index: 5;
-  position: relative;
-}
-    .inline-logo:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
-}
+    .title-container h1 {
+      margin: 0;
+      font-size: 3rem;
+      letter-spacing: 3px;
+    }
 
-.nav-wrapper {
-  position: relative;
-  z-index: 1;
-}
-
-nav {
-  background-color: rgba(15, 15, 25, 0.9);
-  padding: 0.75rem;
-  text-align: center;
-}
-
+    .inline-logo {
+      width: 60px;
+      height: auto;
+      margin-top: -5px;
+    }
 
     .divider {
       width: 100%;
@@ -173,14 +159,14 @@ nav {
   <img src="corner_flourish_BR.png" class="corner-decor bottom-right" alt="Bottom Right Flourish" />
 
   <!-- Header -->
-<header>
-  <div class="title-container">
-    <h1>Nocturne Verse</h1>
-    <img src="logo1.png" alt="Nocturne Verse Logo" class="inline-logo" />
-  </div>
-</header>
+  <header>
+    <div class="title-container">
+      <h1>Nocturne Verse</h1>
+      <img src="logo1.png" alt="Nocturne Verse Logo" class="inline-logo" />
+    </div>
+  </header>
 
-<div class="nav-wrapper">
+  <!-- Navigation -->
   <nav>
     <a href="index.html">Home</a>
     <a href="poems.html">Poems</a>
@@ -188,14 +174,13 @@ nav {
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </nav>
-</div>
 
   <!-- Intro Divider -->
   <div class="divider">
     <p style="font-style: italic; font-size: 1.1rem; color: #ccc; margin-bottom: 0.5rem;">
       Your source for dark, lyrical, and myth-woven poetry
     </p>
-    <img src="section_divider.png" alt="Section Divider" />
+    <img src="divider.png" alt="Section Divider" />
     <p style="font-style: italic; font-size: 0.95rem; color: #999; margin-top: 0.5rem;">
       “I became insane, with long intervals of horrible sanity.” - <i>Edgar Allan Poe</i>
     </p>
