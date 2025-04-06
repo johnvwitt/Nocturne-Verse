@@ -84,21 +84,19 @@
       margin-bottom: 1.5rem;
     }
 
-    .buy-button {
+    .payhip-buy-button {
       background-color: #a792ff;
-      color: #0b0b1a;
+      color: #0b0b1a !important;
       font-size: 1.1rem;
       font-weight: bold;
-      border: none;
-      border-radius: 5px;
       padding: 0.75rem 1.5rem;
-      cursor: pointer;
-      text-decoration: none;
+      border-radius: 5px;
       display: inline-block;
+      text-decoration: none;
       transition: background-color 0.3s ease;
     }
 
-    .buy-button:hover {
+    .payhip-buy-button:hover {
       background-color: #c0b3ff;
     }
 
@@ -152,7 +150,13 @@
         <br><br>
         Includes 24 pages of original gothic and speculative poetry in PDF format.
       </p>
-      <a href="https://payhip.com/b/YOURPRODUCTID" class="buy-button" target="_blank">Buy Now – $3.00</a>
+
+      <!-- 💳 Payhip Overlay Button -->
+      <a href="https://payhip.com/b/KBIQdl" class="payhip-buy-button" data-theme="dark">
+        Buy Now – $3.00
+      </a>
+      <script src="https://payhip.com/payhip.js"></script>
+
     </div>
   </main>
 
