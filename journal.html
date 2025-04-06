@@ -58,6 +58,25 @@
       margin-bottom: 3rem;
     }
 
+    .featured {
+      margin-bottom: 4rem;
+      background-color: rgba(40, 30, 60, 0.9);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+      text-align: center;
+    }
+
+    .featured img {
+      width: 250px;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+    }
+
+    .featured h2 {
+      color: #a792ff;
+    }
+
     .issue-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -92,7 +111,7 @@
 
     .issue-card a {
       display: inline-block;
-      margin: 0.25rem;
+      margin-top: 0.5rem;
       padding: 0.5rem 1rem;
       background-color: #a792ff;
       color: #0b0b1a;
@@ -105,7 +124,22 @@
       background-color: #c0b3ff;
     }
 
+    .archive-select {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .archive-select select {
+      background-color: #1a1a2a;
+      color: #f0f0f0;
+      font-family: 'Georgia', serif;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: none;
+    }
+
     footer {
+      margin-top: 3rem;
       background-image: url('footer_background.png');
       background-size: cover;
       background-position: center;
@@ -127,7 +161,6 @@
   </style>
 </head>
 <body>
-
   <header>
     <h1>The Nocturne Journal</h1>
   </header>
@@ -145,46 +178,51 @@
       <p>Our quarterly digital journal features carefully curated selections of gothic, speculative, and lyrical poetry. Each issue is available for digital download or online reading.</p>
     </div>
 
-    <div class="issue-grid">
+    <div class="featured">
+      <h2>🔥 Best Seller: Spring 2025 Issue</h2>
+      <img src="spring-2025-cover.png" alt="Spring 2025 Cover">
+      <p>Moonlit myths and dream-wrapped elegies. Don’t miss the issue readers can’t stop sharing.</p>
+      <a href="spring-2025.html">View Product</a>
+    </div>
 
-      <!-- SPRING 2025 -->
+    <div class="issue-grid">
+      <!-- Spring 2025 -->
       <div class="issue-card">
-        <img src="forest.png" alt="Spring 2025 Issue Cover" />
+        <img src="spring-2025-cover.png" alt="Spring 2025 Issue Cover" />
         <div class="issue-title">Spring 2025</div>
-        <div class="issue-description">New voices, moonlit myths, and memory-buried relics in our haunting spring debut.</div>
-        <a href="spring-2025.html"_blank">Buy Now</a>
-        <a href="members/spring-2025.html">Member Access</a>
+        <div class="issue-description">Moonlit myths and memory-buried relics in our haunting debut.</div>
+        <a href="spring-2025.html">View Product</a>
       </div>
 
-      <!-- WINTER 2024 -->
+      <!-- Winter 2024 -->
       <div class="issue-card">
         <img src="winter-2024-cover.png" alt="Winter 2024 Issue Cover" />
         <div class="issue-title">Winter 2024</div>
-        <div class="issue-description">An icy collection of elegies, ghost song, and twilight transformation.</div>
-        <a href="https://payhip.com/b/KBIQd" target="_blank">Buy Now</a>
-        <a href="members/winter-2024.html">Member Access</a>
+        <div class="issue-description">Elegies, ghost song, and twilight transformation.</div>
+        <a href="winter-2024.html">View Product</a>
       </div>
 
-      <!-- ADD MORE ISSUES HERE -->
-      
+      <!-- Add more quarterly issues here -->
+    </div>
+
+    <div class="archive-select">
+      <p>Select a past year to explore more issues:</p>
+      <select onchange="if(this.value) window.location.href=this.value">
+        <option value="">-- Choose an archive year --</option>
+        <option value="archive/2024.html">2024</option>
+        <option value="archive/2023.html">2023</option>
+        <!-- Add more years as needed -->
+      </select>
     </div>
   </main>
 
   <footer>
     &copy; 2025 Nocturne Verse. All rights reserved.
     <div class="social-icons">
-      <a href="https://www.facebook.com" target="_blank">
-        <img src="facebook_icon.png" alt="Facebook" />
-      </a>
-      <a href="https://www.linkedin.com" target="_blank">
-        <img src="linkedin_icon.png" alt="LinkedIn" />
-      </a>
-      <a href="mailto:john.v.witt@gmail.com">
-        <img src="email_icon.png" alt="Email" />
-      </a>
-      <a href="https://www.twitter.com" target="_blank">
-        <img src="x_icon.png" alt="X (Twitter)" />
-      </a>
+      <a href="https://www.facebook.com" target="_blank"><img src="facebook_icon.png" alt="Facebook" /></a>
+      <a href="https://www.linkedin.com" target="_blank"><img src="linkedin_icon.png" alt="LinkedIn" /></a>
+      <a href="mailto:john.v.witt@gmail.com"><img src="email_icon.png" alt="Email" /></a>
+      <a href="https://www.twitter.com" target="_blank"><img src="x_icon.png" alt="X (Twitter)" /></a>
     </div>
   </footer>
 </body>
