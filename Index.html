@@ -273,29 +273,38 @@
 
     <!-- REPLACE MAIN SECTION BELOW IN YOUR EXISTING FILE -->
 
-<!-- Featured Poems -->
+<!-- Featured Poems Marquee -->
 <div class="featured-banner">Featured Poems: March 2025</div>
 
 <style>
-  .featured-scroll {
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    padding-bottom: 1rem;
+  .marquee-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
     margin-bottom: 2rem;
   }
 
-  .featured-scroll::-webkit-scrollbar {
-    height: 8px;
+  .marquee-content {
+    display: flex;
+    gap: 1.5rem;
+    animation: scrollLeft 40s linear infinite;
+    padding: 1rem 0;
   }
 
-  .featured-scroll::-webkit-scrollbar-thumb {
-    background-color: #5e4b8b;
-    border-radius: 4px;
-  }
-
-  .featured-scroll::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
+.marquee-content:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+  
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
 
   .poem-card {
@@ -307,9 +316,9 @@
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     position: relative;
     z-index: 1;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .poem-card:hover {
@@ -330,6 +339,7 @@
   }
 
   .tbd-card {
+    flex: 0 0 300px;
     background-image: url('tbd.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -347,46 +357,54 @@
   }
 </style>
 
-<div class="featured-scroll">
+<div class="marquee-wrapper">
+  <div class="marquee-content">
 
-  <!-- Poem 1 -->
-  <div class="poem-card">
-    <a href="suitcase.html">
-      <h2>Suitcase</h2>
-      <p>This introspective free verse explores memory, grief, and companionship through the metaphor of a travel-worn suitcase.</p>
-      <div class="author">by J. Witt</div>
-    </a>
+    <!-- First Set (original) -->
+    <div class="poem-card">
+      <a href="suitcase.html">
+        <h2>Suitcase</h2>
+        <p>This introspective free verse explores memory, grief, and companionship through the metaphor of a travel-worn suitcase.</p>
+        <div class="author">by J. Witt</div>
+      </a>
+    </div>
+
+    <div class="poem-card">
+      <a href="memento-mori.html">
+        <h2>Memento Mori</h2>
+        <p>Through gothic imagery and rhythmic phrasing, this poem reflects on impermanence, death, and the allure of nightfall.</p>
+        <div class="author">by J. Witt</div>
+      </a>
+    </div>
+
+    <div class="tbd-card">TBD – Awaiting Future Work</div>
+    <div class="tbd-card">TBD – Awaiting Future Work</div>
+    <div class="tbd-card">TBD – Awaiting Future Work</div>
+    <div class="tbd-card">TBD – Awaiting Future Work</div>
+
+    <!-- Duplicate Set for Seamless Loop -->
+    <div class="poem-card">
+      <a href="suitcase.html">
+        <h2>Suitcase</h2>
+        <p>This introspective free verse explores memory, grief, and companionship through the metaphor of a travel-worn suitcase.</p>
+        <div class="author">by J. Witt</div>
+      </a>
+    </div>
+
+    <div class="poem-card">
+      <a href="memento-mori.html">
+        <h2>Memento Mori</h2>
+        <p>Through gothic imagery and rhythmic phrasing, this poem reflects on impermanence, death, and the allure of nightfall.</p>
+        <div class="author">by J. Witt</div>
+      </a>
+    </div>
+
+    <div class="tbd-card">TBD – Awaiting Future Work</div>
+    <div class="tbd-card">TBD – Awaiting Future Work</div>
+    <div class="tbd-card">TBD – Awaiting Future Work</div>
+    <div class="tbd-card">TBD – Awaiting Future Work</div>
+
   </div>
-
-  <!-- Poem 2 -->
-  <div class="poem-card">
-    <a href="memento-mori.html">
-      <h2>Memento Mori</h2>
-      <p>Through gothic imagery and rhythmic phrasing, this poem reflects on impermanence, death, and the allure of nightfall.</p>
-      <div class="author">by J. Witt</div>
-    </a>
-  </div>
-
-  <!-- Placeholder 1 -->
-  <div class="tbd-card">
-    TBD – Awaiting Future Work
-  </div>
-
-  <!-- Placeholder 2 -->
-  <div class="tbd-card">
-    TBD – Awaiting Future Work
-  </div>
-
-  <!-- Placeholder 3 -->
-  <div class="tbd-card">
-    TBD – Awaiting Future Work
-  </div>
-
-  <!-- Placeholder 4 -->
-  <div class="tbd-card">
-    TBD – Awaiting Future Work
-  </div>
-
 </div>
 
   </main>
