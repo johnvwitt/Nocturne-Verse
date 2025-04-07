@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suitcase | Nocturne Verse</title>
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    body {
+      margin: 0;
+      background-color: #0b0b1a;
+      color: #f0f0f0;
+      font-family: 'Georgia', serif;
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .left-panel {
+      flex: 1;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: rgba(15, 15, 25, 0.95);
+      position: relative;
+    }
+
+    .poem-scrollbox {
+      max-height: 60vh;
+      overflow-y: auto;
+      padding-right: 1rem;
+      scrollbar-color: #a792ff #0b0b1a;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #a792ff;
+      margin-bottom: 1rem;
+    }
+
+    .byline {
+      font-style: italic;
+      margin-bottom: 2rem;
+      color: #ccc;
+    }
+
+    .poem-scrollbox p {
+      line-height: 1.8;
+      white-space: pre-line;
+      font-size: 1.1rem;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 1rem;
+      left: 2rem;
+      background-color: #a792ff;
+      color: #0b0b1a;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .back-button:hover {
+      background-color: #c0b3ff;
+    }
+
+    .right-panel {
+      flex: 1;
+      background-image: url('suitcase.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: zoom-in;
+      position: relative;
+    }
+
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background-color: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 4px solid #a792ff;
+      border-radius: 8px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 2rem;
+      color: #ccc;
+      cursor: pointer;
+    }
+
+    .lightbox-close:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .left-panel, .right-panel {
+        flex: none;
+        width: 100%;
+        height: auto;
+      }
+
+      .right-panel {
+        height: 300px;
+      }
+
+      .back-button {
+        top: 0.5rem;
+        left: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="left-panel">
+    <button class="back-button" onclick="window.history.back()">← Back</button>
+
+    <h1>Suitcase</h1>
+    <div class="byline">by J. Witt</div>
+
+    <div class="poem-scrollbox">
+      <p>
+Suitcase
+
+My friend sits idly next to me
+It was once just a suitcase
+Trusty and free
+We traveled and laughed 
+We wandered and gaffed 
+
+My dearly betrothed, one day approached 
+Her admission, tears
+My dearest friend, that night reproached
+
+Now my friend sits idly next to me 
+Portable as can be
+Waiting eternally 
+For the next adventure
+
+
+      </p>
+    </div>
+  </div>
+
+  <div class="right-panel" onclick="openLightbox()"></div>
+
+  <!-- Lightbox modal -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img src="suitcase.png" alt="Suitcase Illustration" />
+  </div>
+
+  <script>
+    function openLightbox() {
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
