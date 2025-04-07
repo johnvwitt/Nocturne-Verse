@@ -271,29 +271,124 @@
       </div>
     </div>
 
-    <div class="featured-banner">Featured: March 2025</div>
+    <!-- REPLACE MAIN SECTION BELOW IN YOUR EXISTING FILE -->
 
-    <div class="poem-card">
-      <a href="veil-of-night.html">
-        <h2>In the Veil of Night</h2>
-        <p>Whispers thread the trees’ embrace,<br />
-        Beneath the stars, a ghostly trace.<br />
-        The moon weeps silver on the stone,<br />
-        Where dreams and dust remain alone.</p>
-        <div class="author">by A. Everhart</div>
-      </a>
-    </div>
+<!-- Featured Poems -->
+<div class="featured-banner">Featured Poems: March 2025</div>
 
-    <div class="poem-card">
-      <a href="memento-mori.html">
-        <h2>Memento Mori</h2>
-        <p>Crimson echoes, cold winds cry,<br />
-        Through chapel ruins, shadows fly.<br />
-        A velvet hush, a fleeting glance,<br />
-        The night begins its mournful dance.</p>
-        <div class="author">by J. Witt</div>
-      </a>
-    </div>
+<style>
+  .featured-scroll {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .featured-scroll::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .featured-scroll::-webkit-scrollbar-thumb {
+    background-color: #5e4b8b;
+    border-radius: 4px;
+  }
+
+  .featured-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .poem-card {
+    flex: 0 0 300px;
+    background-image: url('poem_card_texture.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    position: relative;
+    z-index: 1;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .poem-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(170, 146, 255, 0.4);
+  }
+
+  .poem-card .author {
+    margin-top: 1rem;
+    font-style: italic;
+    color: #bbb;
+  }
+
+  .poem-card a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+  }
+
+  .tbd-card {
+    background-image: url('tbd.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(30, 25, 45, 0.9);
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 1rem;
+    color: #aaa;
+    font-style: italic;
+    text-shadow: 0 0 4px #000;
+  }
+</style>
+
+<div class="featured-scroll">
+
+  <!-- Poem 1 -->
+  <div class="poem-card">
+    <a href="suitcase.html">
+      <h2>Suitcase</h2>
+      <p>This introspective free verse explores memory, grief, and companionship through the metaphor of a travel-worn suitcase.</p>
+      <div class="author">by J. Witt</div>
+    </a>
+  </div>
+
+  <!-- Poem 2 -->
+  <div class="poem-card">
+    <a href="memento-mori.html">
+      <h2>Memento Mori</h2>
+      <p>Through gothic imagery and rhythmic phrasing, this poem reflects on impermanence, death, and the allure of nightfall.</p>
+      <div class="author">by J. Witt</div>
+    </a>
+  </div>
+
+  <!-- Placeholder 1 -->
+  <div class="tbd-card">
+    TBD – Awaiting Future Work
+  </div>
+
+  <!-- Placeholder 2 -->
+  <div class="tbd-card">
+    TBD – Awaiting Future Work
+  </div>
+
+  <!-- Placeholder 3 -->
+  <div class="tbd-card">
+    TBD – Awaiting Future Work
+  </div>
+
+  <!-- Placeholder 4 -->
+  <div class="tbd-card">
+    TBD – Awaiting Future Work
+  </div>
+
+</div>
+
   </main>
 
   <!-- Footer -->
