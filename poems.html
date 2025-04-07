@@ -36,16 +36,23 @@
       text-align: center;
     }
 
-    nav a {
+    nav a, nav span.coming-soon {
       color: #ccc;
       margin: 0 1rem;
       text-decoration: none;
       font-size: 1.1rem;
     }
 
-    nav a:hover {
+    nav a:hover, nav span.coming-soon:hover {
       color: #fff;
       text-shadow: 0 0 5px #aaa;
+    }
+
+    nav span.coming-soon {
+      display: inline-block;
+      color: #666;
+      cursor: default;
+      transition: color 0.3s ease;
     }
 
     .content-wrapper {
@@ -170,9 +177,10 @@
     <a href="index.html">Home</a>
     <a href="poems.html">Poems</a>
     <a href="authors.html">Authors</a>
-     <a href="submit.html">Submit</a>
+    <a href="submit.html">Submit</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
+    <span class="coming-soon" title="Coming soon!">Journal ✦</span>
   </nav>
 
   <div class="content-wrapper">
@@ -181,57 +189,28 @@
       <select id="monthFilter">
         <option value="all">All Months</option>
         <option value="april">April 2025</option>
-        <option value="march">March 2025</option>
-        <option value="february">February 2025</option>
-        <option value="january">January 2025</option>
+        <!-- Add new months here -->
       </select>
     </aside>
 
     <main class="scrollable-poems">
+      <!-- April 2025 -->
       <div class="author-block" data-month="april">
-        <div class="author-name">Elias Thorn</div>
+        <div class="author-name">J. Witt</div>
         <ul class="poem-list">
-          <li><a href="mist-on-wren-hollow.html">Mist on Wren Hollow</a></li>
-          <li><a href="gravel-saints.html">Gravel Saints</a></li>
-        </ul>
-        <div class="author-name">Juniper M. Ash</div>
-        <ul class="poem-list">
-          <li><a href="mythbone.html">Mythbone</a></li>
+          <li><a href="suitcase.html">Suitcase</a></li>
         </ul>
       </div>
 
-      <div class="author-block" data-month="march">
-        <div class="author-name">A. Everhart</div>
+      <!-- Add new author-blocks for future months below -->
+      <!-- Template:
+      <div class="author-block" data-month="monthname">
+        <div class="author-name">Author Name</div>
         <ul class="poem-list">
-          <li><a href="in-the-veil-of-night.html">In the Veil of Night</a></li>
-        </ul>
-        <div class="author-name">L. Virelle</div>
-        <ul class="poem-list">
-          <li><a href="the-ravens-lament.html">The Raven’s Lament</a></li>
+          <li><a href="poem-link.html">Poem Title</a></li>
         </ul>
       </div>
-
-      <div class="author-block" data-month="february">
-        <div class="author-name">Silas Wren</div>
-        <ul class="poem-list">
-          <li><a href="silence-below-the-grain-silo.html">Silence Below the Grain Silo</a></li>
-        </ul>
-        <div class="author-name">Nico Reyes</div>
-        <ul class="poem-list">
-          <li><a href="lightyears-in-reverse.html">Lightyears in Reverse</a></li>
-        </ul>
-      </div>
-
-      <div class="author-block" data-month="january">
-        <div class="author-name">Mae Kestrel</div>
-        <ul class="poem-list">
-          <li><a href="winterheart.html">Winterheart</a></li>
-        </ul>
-        <div class="author-name">T. Blackwell</div>
-        <ul class="poem-list">
-          <li><a href="threshold.html">Threshold</a></li>
-        </ul>
-      </div>
+      -->
     </main>
   </div>
 
