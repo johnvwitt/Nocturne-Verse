@@ -102,6 +102,8 @@
       padding: 1.5rem;
       border-radius: 6px;
       box-shadow: 0 0 12px rgba(0,0,0,0.4);
+      max-height: 250px;
+      overflow-y: auto;
     }
 
     .announcements h2, .updates-log h2 {
@@ -127,6 +129,23 @@
 
     .announcements a:hover, .updates-log a:hover {
       text-decoration: underline;
+    }
+
+    /* Custom Scrollbars */
+    .announcements::-webkit-scrollbar,
+    .updates-log::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .announcements::-webkit-scrollbar-thumb,
+    .updates-log::-webkit-scrollbar-thumb {
+      background-color: #5e4b8b;
+      border-radius: 4px;
+    }
+
+    .announcements::-webkit-scrollbar-track,
+    .updates-log::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
     }
 
     .featured-banner {
@@ -234,6 +253,8 @@
           <li><strong>🕯️ April 5, 2025:</strong> Summer 2025 Journal now in production!</li>
           <li><strong>🌙 March 22, 2025:</strong> New poem “Memento Mori” has been added to our featured collection.</li>
           <li><strong>🖋️ Feb 18, 2025:</strong> Submissions are open for the Summer 2025 issue!</li>
+          <li><strong>✨ Jan 30, 2025:</strong> Revamped poetry categories and navigation enhancements.</li>
+          <li><strong>🌒 Dec 12, 2024:</strong> Nocturne Verse winter event a success!</li>
         </ul>
       </div>
 
@@ -244,6 +265,7 @@
           <li><strong>April 6, 2025:</strong> New announcements sidebar + update log added.</li>
           <li><strong>April 4, 2025:</strong> Issue product pages redesigned for Payhip overlay support.</li>
           <li><strong>April 1, 2025:</strong> Members area and file upload system integrated.</li>
+          <li><strong>March 29, 2025:</strong> Updated poem template layout to support scrollable verses.</li>
         </ul>
       </div>
     </div>
