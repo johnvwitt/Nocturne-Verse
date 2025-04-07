@@ -35,13 +35,54 @@
     img {
       max-width: 300px;
       margin-top: 2rem;
+
+  .error-box {
+    border: 2px solid #a792ff;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(20, 15, 35, 0.9);
+    box-shadow: 0 0 20px rgba(170, 146, 255, 0.2);
+  }
+
+  .error-box h1 {
+    font-size: 2.5rem;
+    color: #a792ff;
+    margin-bottom: 1rem;
+  }
+
+  .error-box p {
+    font-size: 1.1rem;
+    color: #ddd;
+    margin-bottom: 1.2rem;
+  }
+
+  .error-box a {
+    color: #a792ff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .error-box a:hover {
+    text-shadow: 0 0 5px #a792ff;
+  }
+
+  .error-box img {
+    max-width: 100%;
+    margin-top: 1rem;
+    border-radius: 8px;
+  }
+      
     }
   </style>
 </head>
 <body>
+<div class="error-box">
   <h1>404 – You’ve Wandered into the Fog</h1>
   <p>The page you’re looking for doesn’t exist or has faded into myth.</p>
   <p><a href="index.html">Return to the Hollow</a></p>
-  <img src="404img.png" alt="Decorative element" />
+  <img src="404img.png" alt="Cloaked woman in forest" />
+</div>
 </body>
 </html>
