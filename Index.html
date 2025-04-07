@@ -85,8 +85,48 @@
 
     main {
       padding: 1rem 2rem 2rem 2rem;
-      max-width: 800px;
+      max-width: 1200px;
       margin: 0 auto;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .announcements, .updates-log {
+      background-color: rgba(30, 25, 45, 0.85);
+      border-left: 4px solid #a792ff;
+      padding: 1.5rem;
+      border-radius: 6px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.4);
+    }
+
+    .announcements h2, .updates-log h2 {
+      margin-top: 0;
+      color: #a792ff;
+      font-size: 1.5rem;
+    }
+
+    .announcements ul, .updates-log ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .announcements li, .updates-log li {
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+    }
+
+    .announcements a, .updates-log a {
+      color: #a792ff;
+      text-decoration: none;
+    }
+
+    .announcements a:hover, .updates-log a:hover {
+      text-decoration: underline;
     }
 
     .featured-banner {
@@ -148,43 +188,6 @@
       margin: 0 0.5rem;
       filter: grayscale(100%) brightness(0.9);
     }
-
-<!-- announcements -->
-    .announcements {
-  background-color: rgba(30, 25, 45, 0.85);
-  border-left: 4px solid #a792ff;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  border-radius: 6px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.4);
-}
-
-.announcements h2 {
-  margin-top: 0;
-  color: #a792ff;
-  font-size: 1.5rem;
-}
-
-.announcements ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.announcements li {
-  margin-bottom: 0.75rem;
-  line-height: 1.6;
-}
-
-.announcements a {
-  color: #a792ff;
-  text-decoration: none;
-}
-
-.announcements a:hover {
-  text-decoration: underline;
-}
-    
-    
   </style>
 </head>
 <body>
@@ -199,7 +202,6 @@
   <header>
     <div class="title-container">
       <h1>Nocturne Verse</h1>
-      
     </div>
   </header>
 
@@ -225,19 +227,26 @@
 
   <!-- Main Content -->
   <main>
+    <div class="main-grid">
+      <div class="announcements">
+        <h2>What's New</h2>
+        <ul>
+          <li><strong>🕯️ April 5, 2025:</strong> Spring 2025 Journal now available in our <a href="journal.html">Journal</a> section!</li>
+          <li><strong>🌙 March 22, 2025:</strong> New poem “Memento Mori” has been added to our featured collection.</li>
+          <li><strong>🖋️ Feb 18, 2025:</strong> Submissions are open for the Summer 2025 issue!</li>
+        </ul>
+      </div>
 
+      <div class="updates-log">
+        <h2>Website Updates</h2>
+        <ul>
+          <li><strong>April 6, 2025:</strong> New announcements sidebar + update log added.</li>
+          <li><strong>April 4, 2025:</strong> Issue product pages redesigned for Payhip overlay support.</li>
+          <li><strong>April 1, 2025:</strong> Members area and file upload system integrated.</li>
+        </ul>
+      </div>
+    </div>
 
-
-<div class="announcements">
-  <h2>Latest Announcements</h2>
-  <ul>
-    <li><strong>🕯️ April 5, 2025:</strong> Spring 2025 Journal now available in our <a href="journal.html">Journal</a> section!</li>
-    <li><strong>🌙 March 22, 2025:</strong> New poem “Memento Mori” has been added to our featured collection.</li>
-    <li><strong>🖋️ Feb 18, 2025:</strong> Submissions are open for the Summer 2025 issue!</li>
-  </ul>
-</div>
-
-    
     <div class="featured-banner">Featured: March 2025</div>
 
     <div class="poem-card">
