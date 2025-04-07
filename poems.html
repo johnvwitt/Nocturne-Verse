@@ -99,6 +99,18 @@
       padding-right: 1rem;
     }
 
+    .poem-section {
+      margin-bottom: 2rem;
+    }
+
+    .poem-section h3 {
+      font-size: 1.4rem;
+      color: #a792ff;
+      border-bottom: 1px solid #444;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.25rem;
+    }
+
     ul.poem-list {
       list-style: none;
       padding-left: 0;
@@ -174,21 +186,31 @@
 
   <div class="content-wrapper">
     <aside class="sidebar">
-      <h2>Filter by Poem</h2>
-      <select id="poemFilter">
-        <option value="all">All Poems</option>
-        <option value="memento-mori">Memento Mori</option>
-        <option value="suitcase">Suitcase</option>
-        <!-- Add new poems here in alphabetical order -->
+      <h2>Filter by Letter</h2>
+      <select id="letterFilter">
+        <option value="all">All</option>
+        <option value="m">M</option>
+        <option value="s">S</option>
+        <!-- Add more letters as needed -->
       </select>
     </aside>
 
     <main class="scrollable-poems">
-      <ul class="poem-list">
-        <li><a href="memento-mori.html">Memento Mori – J. Witt</a></li>
-        <li><a href="suitcase.html">Suitcase – J. Witt</a></li>
-        <!-- Add more poems alphabetically here -->
-      </ul>
+      <div class="poem-section" data-letter="m">
+        <h3>M</h3>
+        <ul class="poem-list">
+          <li><a href="memento-mori.html">Memento Mori – J. Witt</a></li>
+        </ul>
+      </div>
+
+      <div class="poem-section" data-letter="s">
+        <h3>S</h3>
+        <ul class="poem-list">
+          <li><a href="suitcase.html">Suitcase – J. Witt</a></li>
+        </ul>
+      </div>
+
+      <!-- Add more poem sections alphabetically below -->
     </main>
   </div>
 
@@ -211,17 +233,17 @@
   </footer>
 
   <script>
-    const filter = document.getElementById("poemFilter");
-    const poems = document.querySelectorAll(".poem-list li");
+    const filter = document.getElementById("letterFilter");
+    const sections = document.querySelectorAll(".poem-section");
 
     filter.addEventListener("change", function () {
       const selected = this.value;
-      poems.forEach(poem => {
-        const href = poem.querySelector("a").getAttribute("href");
-        if (selected === "all" || href.includes(selected)) {
-          poem.style.display = "list-item";
+      sections.forEach(section => {
+        const letter = section.getAttribute("data-letter");
+        if (selected === "all" || letter === selected) {
+          section.style.display = "block";
         } else {
-          poem.style.display = "none";
+          section.style.display = "none";
         }
       });
     });
