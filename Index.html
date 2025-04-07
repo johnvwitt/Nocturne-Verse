@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nocturne Verse</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
-
   <style>
     body {
       margin: 0;
@@ -21,16 +20,23 @@
       text-align: center;
     }
 
-    nav a {
+    nav a, nav span.coming-soon {
       color: #ccc;
       margin: 0 1rem;
       text-decoration: none;
       font-size: 1.1rem;
     }
 
-    nav a:hover {
+    nav a:hover, nav span.coming-soon:hover {
       color: #fff;
       text-shadow: 0 0 5px #aaa;
+    }
+
+    nav span.coming-soon {
+      display: inline-block;
+      color: #666;
+      cursor: default;
+      transition: color 0.3s ease;
     }
 
     .corner-decor {
@@ -67,12 +73,6 @@
       letter-spacing: 3px;
     }
 
-    .inline-logo {
-      width: 60px;
-      height: auto;
-      margin-top: -5px;
-    }
-
     .divider {
       width: 100%;
       margin: 2rem 0 1rem 0;
@@ -106,48 +106,6 @@
       overflow-y: auto;
     }
 
-    .announcements h2, .updates-log h2 {
-      margin-top: 0;
-      color: #a792ff;
-      font-size: 1.5rem;
-    }
-
-    .announcements ul, .updates-log ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    .announcements li, .updates-log li {
-      margin-bottom: 0.75rem;
-      line-height: 1.6;
-    }
-
-    .announcements a, .updates-log a {
-      color: #a792ff;
-      text-decoration: none;
-    }
-
-    .announcements a:hover, .updates-log a:hover {
-      text-decoration: underline;
-    }
-
-    /* Custom Scrollbars */
-    .announcements::-webkit-scrollbar,
-    .updates-log::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    .announcements::-webkit-scrollbar-thumb,
-    .updates-log::-webkit-scrollbar-thumb {
-      background-color: #5e4b8b;
-      border-radius: 4px;
-    }
-
-    .announcements::-webkit-scrollbar-track,
-    .updates-log::-webkit-scrollbar-track {
-      background: rgba(255, 255, 255, 0.05);
-    }
-
     .featured-banner {
       text-align: center;
       font-size: 1rem;
@@ -157,18 +115,44 @@
       margin-bottom: 1rem;
     }
 
-    .poem-card {
-      background-image: url('poem_card_texture.png');
+    .carousel-wrapper {
+      width: 100%;
+      overflow: hidden;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .carousel-track {
+      display: flex;
+      width: fit-content;
+      animation: scrollLoop 60s linear infinite;
+    }
+
+    .carousel-track:hover {
+      animation-play-state: paused;
+      cursor: pointer;
+    }
+
+    .carousel-set {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .poem-card, .tbd-card {
+      flex: 0 0 300px;
+      height: auto;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
       padding: 2rem;
-      margin-bottom: 1.5rem;
       border-radius: 8px;
       box-shadow: 0 0 20px rgba(0,0,0,0.6);
-      position: relative;
-      z-index: 1;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background-color: rgba(30, 25, 45, 0.9);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .poem-card:hover {
@@ -186,6 +170,28 @@
       color: inherit;
       text-decoration: none;
       display: block;
+    }
+
+    .tbd-card {
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .tbd-card img {
+      max-width: 100%;
+      max-height: 300px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 4px #000);
+    }
+
+    @keyframes scrollLoop {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
     footer {
@@ -207,40 +213,20 @@
       margin: 0 0.5rem;
       filter: grayscale(100%) brightness(0.9);
     }
-
-nav span.coming-soon {
-  display: inline-block;
-  color: #666;
-  margin: 0 1rem;
-  font-size: 1.1rem;
-  position: relative;
-  cursor: default;
-  transition: color 0.3s ease;
-}
-
-nav span.coming-soon:hover {
-  color: #fff;
-  text-shadow: 0 0 5px #aaa;
-}
-    
   </style>
 </head>
 <body>
-
-  <!-- Decorative Corners -->
   <img src="corner_flourish_TL.png" class="corner-decor top-left" alt="Top Left Flourish" />
   <img src="corner_flourish_TR.png" class="corner-decor top-right" alt="Top Right Flourish" />
   <img src="corner_flourish_BL.png" class="corner-decor bottom-left" alt="Bottom Left Flourish" />
   <img src="corner_flourish_BR.png" class="corner-decor bottom-right" alt="Bottom Right Flourish" />
 
-  <!-- Header -->
   <header>
     <div class="title-container">
       <h1>Nocturne Verse</h1>
     </div>
   </header>
 
-  <!-- Navigation -->
   <nav>
     <a href="index.html">Home</a>
     <a href="poems.html">Poems</a>
@@ -251,7 +237,6 @@ nav span.coming-soon:hover {
     <span class="coming-soon" title="Coming soon!">Journal ✦</span>
   </nav>
 
-  <!-- Intro Divider -->
   <div class="divider">
     <p style="font-style: italic; font-size: 1.1rem; color: #ccc; margin-bottom: 0.5rem;">
       Your source for dark, lyrical, and myth-woven poetry
@@ -262,20 +247,18 @@ nav span.coming-soon:hover {
     </p>
   </div>
 
-  <!-- Main Content -->
   <main>
     <div class="main-grid">
       <div class="announcements">
         <h2>What's New</h2>
         <ul>
-          <li><strong>🕯️ April 5, 2025:</strong> Summer 2025 Journal now in production!</li>
+          <li><strong>🔯 April 5, 2025:</strong> Summer 2025 Journal now in production!</li>
           <li><strong>🌙 March 22, 2025:</strong> New poem “Memento Mori” has been added to our featured collection.</li>
-          <li><strong>🖋️ Feb 18, 2025:</strong> Submissions are open for the Summer 2025 issue!</li>
+          <li><strong>🕋️ Feb 18, 2025:</strong> Submissions are open for the Summer 2025 issue!</li>
           <li><strong>✨ Jan 30, 2025:</strong> Revamped poetry categories and navigation enhancements.</li>
           <li><strong>🌒 Dec 12, 2024:</strong> Nocturne Verse winter event a success!</li>
         </ul>
       </div>
-
       <div class="updates-log">
         <h2>Technical Updates</h2>
         <ul>
@@ -288,145 +271,57 @@ nav span.coming-soon:hover {
       </div>
     </div>
 
-    <!-- REPLACE MAIN SECTION BELOW IN YOUR EXISTING FILE -->
-
-<!-- Featured Poems Marquee -->
-<div class="featured-banner">Featured Poems: March 2025</div>
-
-<style>
-  .marquee-wrapper {
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
-    margin-bottom: 2rem;
-  }
-
-  .marquee-content {
-    display: flex;
-    gap: 1.5rem;
-    animation: scrollLeft 40s linear infinite;
-    padding: 1rem 0;
-  }
-
-.marquee-content:hover {
-  animation-play-state: paused;
-  cursor: pointer;
-}
-  
-  @keyframes scrollLeft {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-
-  .poem-card {
-    flex: 0 0 300px;
-    background-image: url('poem_card_texture.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.6);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    position: relative;
-    z-index: 1;
-  }
-
-  .poem-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 25px rgba(170, 146, 255, 0.4);
-  }
-
-  .poem-card .author {
-    margin-top: 1rem;
-    font-style: italic;
-    color: #bbb;
-  }
-
-  .poem-card a {
-    color: inherit;
-    text-decoration: none;
-    display: block;
-  }
-
-  .tbd-card {
-    flex: 0 0 300px;
-    background-image: url('tbd.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: rgba(30, 25, 45, 0.9);
-    height: 300px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    border-radius: 8px;
-    padding: 1rem;
-    color: #aaa;
-    font-style: italic;
-    text-shadow: 0 0 4px #000;
-  }
-</style>
-
-<div class="marquee-wrapper">
-  <div class="marquee-content">
-
-    <!-- First Set (original) -->
-    <div class="poem-card">
-      <a href="suitcase.html">
-        <h2>Suitcase</h2>
-        <p>This introspective free verse explores memory, grief, and companionship through the metaphor of a travel-worn suitcase.</p>
-        <div class="author">by J. Witt</div>
-      </a>
+    <div class="featured-banner">Featured Poems: March 2025</div>
+    <div class="carousel-wrapper">
+      <div class="carousel-track">
+        <div class="carousel-set">
+          <div class="poem-card">
+            <a href="suitcase.html">
+              <h2>Suitcase</h2>
+              <p>This introspective free verse explores memory, grief, and companionship through the metaphor of a travel-worn suitcase.</p>
+              <div class="author">by J. Witt</div>
+            </a>
+          </div>
+          <div class="poem-card">
+            <a href="memento-mori.html">
+              <h2>Memento Mori</h2>
+              <p>Through gothic imagery and rhythmic phrasing, this poem reflects on impermanence, death, and the allure of nightfall.</p>
+              <div class="author">by J. Witt</div>
+            </a>
+          </div>
+          <div class="tbd-card">
+            <img src="skeleton_coming_soon.png" alt="Coming Soon" />
+          </div>
+          <div class="tbd-card">
+            <img src="skeleton_coming_soon.png" alt="Coming Soon" />
+          </div>
+        </div>
+        <div class="carousel-set">
+          <div class="poem-card">
+            <a href="suitcase.html">
+              <h2>Suitcase</h2>
+              <p>This introspective free verse explores memory, grief, and companionship through the metaphor of a travel-worn suitcase.</p>
+              <div class="author">by J. Witt</div>
+            </a>
+          </div>
+          <div class="poem-card">
+            <a href="memento-mori.html">
+              <h2>Memento Mori</h2>
+              <p>Through gothic imagery and rhythmic phrasing, this poem reflects on impermanence, death, and the allure of nightfall.</p>
+              <div class="author">by J. Witt</div>
+            </a>
+          </div>
+          <div class="tbd-card">
+            <img src="skeleton_coming_soon.png" alt="Coming Soon" />
+          </div>
+          <div class="tbd-card">
+            <img src="skeleton_coming_soon.png" alt="Coming Soon" />
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="poem-card">
-      <a href="memento-mori.html">
-        <h2>Memento Mori</h2>
-        <p>Through gothic imagery and rhythmic phrasing, this poem reflects on impermanence, death, and the allure of nightfall.</p>
-        <div class="author">by J. Witt</div>
-      </a>
-    </div>
-
-    <div class="tbd-card">TBD – Awaiting Future Work</div>
-    <div class="tbd-card">TBD – Awaiting Future Work</div>
-    <div class="tbd-card">TBD – Awaiting Future Work</div>
-    <div class="tbd-card">TBD – Awaiting Future Work</div>
-
-    <!-- Duplicate Set for Seamless Loop -->
-    <div class="poem-card">
-      <a href="suitcase.html">
-        <h2>Suitcase</h2>
-        <p>This introspective free verse explores memory, grief, and companionship through the metaphor of a travel-worn suitcase.</p>
-        <div class="author">by J. Witt</div>
-      </a>
-    </div>
-
-    <div class="poem-card">
-      <a href="memento-mori.html">
-        <h2>Memento Mori</h2>
-        <p>Through gothic imagery and rhythmic phrasing, this poem reflects on impermanence, death, and the allure of nightfall.</p>
-        <div class="author">by J. Witt</div>
-      </a>
-    </div>
-
-    <div class="tbd-card">TBD – Awaiting Future Work</div>
-    <div class="tbd-card">TBD – Awaiting Future Work</div>
-    <div class="tbd-card">TBD – Awaiting Future Work</div>
-    <div class="tbd-card">TBD – Awaiting Future Work</div>
-
-  </div>
-</div>
-
   </main>
 
-  <!-- Footer -->
   <footer>
     &copy; 2025 Nocturne Verse. All rights reserved.
     <div class="social-icons">
@@ -444,6 +339,5 @@ nav span.coming-soon:hover {
       </a>
     </div>
   </footer>
-
 </body>
 </html>
